@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-143693935-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-143693935-1');
+        </script>
+
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {{ encore_entry_link_tags('nav') }}
+        {{ encore_entry_link_tags('app')}}
+        {% block stylesheets %}
+        {% endblock %}
+    </head>
+
+    <body>
+        {% include 'navBar.html.twig' %}
+
+        {% block body %}{% endblock %}
+
+
+        {% block javascripts %}
+           {{ encore_entry_script_tags('nav') }}
+        {% endblock %}
+        {% include 'footer.html.twig' %}
+    </body>
+</html>
